@@ -25,7 +25,7 @@ async fn json_parser() -> impl Responder {
 
         let mut file = File::open("mock.json").unwrap();
         let mut data = String::new();
-        file.read_to_string(&mut data).unwrap();
+        file.read_to_string(&mut data);
         let object: Value = serde_json::from_str(&data).unwrap();
       
         println!("{:?}", object);
